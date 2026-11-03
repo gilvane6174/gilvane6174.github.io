@@ -1,0 +1,228 @@
+/* ============================================
+   retro.css — 2000年代個人サイト風（HOME/ABOUT/NOVEL/隠し/エラー）
+   ============================================ */
+body.retro {
+  background-color: #000;
+  background-image:
+    radial-gradient(#ffffff22 1px, transparent 1px),
+    radial-gradient(#ffffff11 1px, transparent 1px);
+  background-size: 37px 37px, 23px 23px;
+  background-position: 0 0, 11px 17px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ---- ヘッダー ---- */
+.site-head {
+  border: 3px double var(--line);
+  background: var(--bg2);
+  text-align: center;
+  padding: 14px 10px 10px;
+}
+.site-title {
+  margin: 0;
+  font-family: "Times New Roman", "MS PMincho", serif;
+  font-size: clamp(26px, 7vw, 40px);
+  letter-spacing: .08em;
+  color: #fff;
+  text-shadow: 2px 2px 0 #7b5cff, -1px -1px 0 #1f6fff;
+}
+.site-sub { margin: 4px 0 0; color: var(--dim); font-size: 13px; letter-spacing: .15em; }
+
+/* 流れる文字（marqueeタグは使わずCSSで再現） */
+.ticker {
+  overflow: hidden; white-space: nowrap;
+  border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line);
+  margin-top: 10px; padding: 2px 0;
+  color: var(--accent); font-size: 13px;
+}
+.ticker span {
+  display: inline-block; padding-left: 100%;
+  animation: ticker 22s linear infinite;
+}
+@keyframes ticker { to { transform: translateX(-100%); } }
+
+/* ---- メニュー ---- */
+.menu {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+  list-style: none; padding: 0; margin: 12px 0;
+}
+.menu a {
+  display: inline-block; min-width: 96px; text-align: center;
+  padding: 3px 10px;
+  background: linear-gradient(#2a2a36, #15151c);
+  border: 2px outset #555;
+  color: #fff; text-decoration: none; font-size: 13px;
+}
+.menu a:active { border-style: inset; }
+.menu a[aria-current="page"] { color: var(--yellow); border-color: var(--yellow); }
+.menu a.menu--work { border-color: var(--accent); color: var(--accent); }
+
+/* ---- 箱 ---- */
+.box {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  margin: 14px 0;
+}
+.box__head {
+  margin: 0;
+  background: linear-gradient(90deg, #1b1b5e, #000);
+  color: #fff;
+  font-size: 14px; font-weight: bold;
+  padding: 3px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.box__head::before { content: "■ "; color: var(--accent); }
+.box__body { padding: 10px 14px; }
+.box__body p { margin: .4em 0; }
+
+/* ---- カウンター ---- */
+.counter { text-align: center; }
+.counter__digits {
+  display: inline-flex; gap: 2px; margin: 4px 0;
+  font-family: "Courier New", monospace; font-size: 22px; font-weight: bold;
+}
+.counter__digits span {
+  display: inline-block; width: 1.05em; text-align: center;
+  background: #000; color: var(--accent2);
+  border: 1px solid #333;
+  text-shadow: 0 0 4px var(--accent2);
+}
+.counter__note { font-size: 12px; color: var(--dim); }
+.kiriban {
+  display: none;
+  margin: 6px auto 0; max-width: 420px;
+  border: 2px solid var(--yellow); color: var(--yellow);
+  padding: 4px 8px; font-size: 13px;
+  animation: blink 1s steps(2, start) infinite;
+}
+.kiriban.is-on { display: block; }
+@keyframes blink { to { visibility: hidden; } }
+
+/* ---- 管理人ステータス ---- */
+.status { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; }
+.status__lamp {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #444; box-shadow: 0 0 0 1px #000;
+}
+.status__lamp.is-in { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+.status__lamp.is-watch { background: var(--accent2); box-shadow: 0 0 6px var(--accent2); }
+.status__lamp.is-away { background: #666; }
+
+/* ---- 更新履歴 ---- */
+.log { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.log li { padding: 6px 0; border-bottom: 1px dotted var(--line); }
+.log li:last-child { border-bottom: 0; }
+.log time { color: var(--accent); font-family: "Courier New", monospace; margin-right: 6px; }
+.log .upd { display: block; font-size: 11px; color: var(--dim); }
+.log .upd.is-weird { color: var(--accent2); }
+.log .body { display: block; color: var(--text); }
+.new {
+  display: inline-block; background: var(--accent2); color: #fff;
+  font-size: 10px; padding: 0 4px; margin-left: 4px;
+  animation: blink 1.2s steps(2, start) infinite;
+}
+
+/* ---- 作品リスト ---- */
+.works { list-style: none; margin: 0; padding: 0; }
+.works > li { padding: 12px 0; border-bottom: 1px dashed var(--line); }
+.works > li:last-child { border-bottom: 0; }
+.works h3 { margin: 0 0 4px; font-size: 16px; color: #fff; }
+.works h3::before { content: "▼ "; color: var(--accent2); font-size: 12px; }
+.works .catch { color: var(--yellow); font-size: 13px; margin: 0 0 4px; }
+.works .desc { font-size: 14px; margin: 0 0 6px; }
+.works .links a { margin-right: 12px; font-size: 13px; }
+.note-small { font-size: 12px; color: var(--dim); }
+
+/* ---- リンク集 ---- */
+.linklist { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 12px; }
+.linklist li::before { content: "→ "; color: var(--accent); }
+
+dl.skills dt { color: var(--accent); font-weight: bold; margin-top: 6px; }
+dl.skills dd { margin: 0 0 0 1em; }
+
+/* ---- 工事中バナー ---- */
+.construction {
+  display: block; text-align: center; font-weight: bold; color: #000;
+  padding: 4px;
+  background: repeating-linear-gradient(-45deg, var(--yellow) 0 14px, #000 14px 28px);
+}
+.construction span { background: var(--yellow); padding: 0 8px; }
+
+/* ---- フッター ---- */
+.site-foot {
+  text-align: center; font-size: 12px; color: var(--dim);
+  margin-top: 20px; padding: 12px 0 30px;
+  border-top: 3px double var(--line);
+}
+.site-foot p { margin: .3em 0; }
+.badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 8px 0; }
+.badge {
+  display: inline-block; font-family: "Courier New", monospace; font-size: 10px;
+  border: 1px solid #555; padding: 1px 4px; color: #bbb; background: #0d0d0d;
+}
+.badge b { color: var(--accent); }
+
+/* 隠しリンク：背景と同化。ホバー/フォーカスでだけ見える */
+a.hidden-door, a.hidden-door:visited {
+  color: #000; text-decoration: none; cursor: default;
+}
+a.hidden-door:hover, a.hidden-door:focus-visible { color: #1a1a1a; cursor: pointer; }
+
+/* ---- 地下室（隠しページ） ---- */
+body.basement { background: #000; background-image: none; }
+.basement .wrap { max-width: 620px; }
+.basement h1 {
+  font-family: "Courier New", monospace; color: var(--accent2);
+  font-size: 20px; letter-spacing: .2em; text-align: center;
+}
+.basement .typed { font-family: "Courier New", "MS Gothic", monospace; color: var(--accent); white-space: pre-wrap; font-size: 14px; min-height: 10em; }
+.door-btn {
+  display: inline-block; margin-top: 16px; padding: 8px 18px;
+  border: 1px solid var(--accent2); color: var(--accent2) !important; text-decoration: none;
+}
+.door-btn:hover { background: var(--accent2); color: #000 !important; }
+.center { text-align: center; }
+
+/* ---- エラー/改造中 ---- */
+.err-window {
+  max-width: 460px; margin: 12vh auto 0;
+  border: 2px outset #777; background: #c0c0c0; color: #000;
+  font-family: "MS UI Gothic", "MS PGothic", sans-serif; font-size: 13px;
+}
+.err-window__bar {
+  background: linear-gradient(90deg, #000080, #1084d0); color: #fff;
+  padding: 2px 6px; font-weight: bold; display: flex; justify-content: space-between;
+}
+.err-window__x { border: 1px outset #ddd; background: #c0c0c0; color: #000; width: 16px; text-align: center; line-height: 14px; font-size: 11px; }
+.err-window__body { padding: 16px; display: flex; gap: 14px; }
+.err-window__icon {
+  flex: 0 0 32px; height: 32px; border-radius: 50%;
+  background: #d00; color: #fff; font-weight: bold; text-align: center; line-height: 32px; font-size: 20px;
+}
+.err-window__body p { margin: 0 0 .6em; }
+.err-window__btns { text-align: center; padding: 0 0 14px; }
+.err-window__btns a {
+  display: inline-block; min-width: 88px; padding: 2px 10px; margin: 0 4px;
+  border: 2px outset #eee; background: #c0c0c0; color: #000; text-decoration: none;
+}
+.err-code { font-family: "Courier New", monospace; color: #444; font-size: 11px; }
+
+@media (max-width: 480px) {
+  body { font-size: 14px; }
+  .wrap { padding: 10px; }
+  .menu a { min-width: 0; flex: 1 1 40%; }
+}
+
+/* エラー画面の見出し・補足（404/403） */
+.err-title { font-size: 17px; margin: 0 0 .6em; line-height: 1.5; color: #000; }
+.err-note { font-size: 12px; color: #333; }
+@media (max-width: 480px) {
+  .err-window { margin-top: 6vh; }
+  .err-window__body { flex-direction: column; gap: 8px; }
+  .err-window__icon { width: 32px; align-self: flex-start; }
+}
