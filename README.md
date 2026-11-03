@@ -16,6 +16,7 @@
 | `data/news.js` | 更新履歴（HOMEに表示） |
 | `data/links.js` | リンク集（ABOUTに表示） |
 | `css/` `js/` `favicon.svg` | 見た目と演出 |
+| `ogp.png` | SNSで共有したときに表示される画像 |
 | `.nojekyll` | GitHub Pages の Jekyll 処理を止める |
 
 ## 安全設計
