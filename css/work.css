@@ -59,3 +59,8 @@ body.work {
 .w-more { margin-top: 8px !important; font-size: 13px !important; }
 .w-sub { font-size: 15px; color: #fff; margin: 22px 0 6px; }
 .w-sec > .w-links { margin-top: 14px; }
+
+/* 自主制作の目立つ枠（こもれびデスク） */
+.w-feature { margin: 20px 0 6px; background: #121217; border: 1px solid #23232b; border-left: 3px solid var(--accent); padding: 16px 18px; }
+.w-feature h3 { margin: 0 0 6px; font-size: 16px; color: #fff; }
+.w-feature p { margin: 0 0 6px; font-size: 14px; color: #b5b5bd; }
