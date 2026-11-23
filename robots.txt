@@ -1,0 +1,10 @@
+# robots.txt — gilvane6174.github.io
+# このファイルは Tomoshibi-atlas/ など、同じドメインの全ページにも効きます。
+# 方針：検索エンジン・AIを含め、クロールを制限しない。
+# 地下室・改造中・エラー画面は各ページの noindex で検索から外しています
+#（ここに書くとURLを公開することになるため、あえて書きません）。
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gilvane6174.github.io/sitemap.xml

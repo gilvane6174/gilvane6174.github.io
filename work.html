@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'none'; connect-src 'none'; manifest-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>ご依頼の方へ | Yoshioka Yutaka</title>
+<link rel="canonical" href="https://gilvane6174.github.io/work.html">
 <meta name="description" content="吉岡有隆へのお仕事のご依頼について。Web記事・SEOコンテンツ制作、校正・リライト、アプリ企画・仕様整理、デザイン制作。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Yoshioka Yutaka">
@@ -27,8 +28,10 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/work.css">
 <script src="js/common.js"></script>
+<script src="js/ripple.js" defer></script>
 </head>
 <body class="work">
+<canvas class="ripple" aria-hidden="true"></canvas>
 <a class="skip" href="#main">本文へ</a>
 
 <header class="w-head">
@@ -50,7 +53,7 @@
       <p class="w-kicker">FOR BUSINESS</p>
       <h1>伝わる文章を、仕組みから。</h1>
       <p>Web記事・SEOコンテンツの企画から執筆、校正・リライトまでを一貫して担当します。アプリやサイトの企画・仕様整理、デザイン制作にも対応。心理学、犯罪・サイバー犯罪対策、IT・AI活用など、正確さと読みやすさの両方が問われる分野を得意としています。</p>
-      <p><a class="w-cta ext" href="https://forms.gle/ZL7x1uqHUPTAfdy67" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a></p>
+      <p><a class="w-cta ext" href="https://docs.google.com/forms/d/e/1FAIpQLSeaBNKQCavRffRIuYMr4G78d8dWgp1r07ret-Ar78SI8E76ow/viewform" target="_blank" rel="noopener noreferrer">お問い合わせフォーム</a></p>
     </section>
 
     <section class="w-sec" id="service" aria-labelledby="h-service">
@@ -62,7 +65,7 @@
         </div>
         <div class="w-card">
           <h3>創作・執筆</h3>
-          <p>小説、エッセイ、コラム。ミステリーやサスペンス、人間心理を軸にした物語づくりを得意とし、Kindleでの出版経験もあります。</p>
+          <p>小説、エッセイ、コラム。ミステリーやサスペンス、人間心理を軸にした物語づくりを得意とし、Kindleでの出版経験もあります。小説の原案担当として、ほかの小説家さんとの合作も行っています。</p>
         </div>
         <div class="w-card">
           <h3>企画・開発支援</h3>
@@ -137,9 +140,11 @@
             <ul class="w-list">
               <li>執筆・編集：Web記事／SEO記事／構成作成／校正・リライト／監修</li>
               <li>Web・デザイン：Webデザイン／コーディング／画像制作／監修</li>
-              <li>IT・制作：MOS（Word・Excel）／AI活用／GitHub／個人開発・アプリ企画／サイト企画・運用</li>
+              <li>IT・制作：MOSマスター（Microsoft Office Specialist Master）／AI活用／GitHub／個人開発・アプリ企画／サイト企画・運用</li>
             </ul>
           </td></tr>
+          <tr><th scope="row">保有資格</th><td>基本情報技術者、介護福祉士、MOSマスター（Microsoft Office Specialist Master）</td></tr>
+          <tr><th scope="row">学習中の資格</th><td>情報処理安全確保支援士、G検定（JDLA Deep Learning for GENERAL）、AWS認定、ORACLE MASTER、シスコ技術者認定（取得を目指して学習中）</td></tr>
           <tr><th scope="row">出版・公開</th><td>note、Kindle、BOOTH</td></tr>
         </tbody>
       </table>
@@ -153,8 +158,8 @@
         <a class="ext" href="https://yoshiokayutaka.hateblo.jp/" target="_blank" rel="noopener noreferrer">はてなブログ（SEO記事サンプル・IT/セキュリティ啓発）</a>
         <a class="ext" href="https://note.com/yoshiokayutaka" target="_blank" rel="noopener noreferrer">note</a>
         <a class="ext" href="https://github.com/gilvane6174" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="ext" href="https://github.com/gilvane6174/MeteOmo" target="_blank" rel="noopener noreferrer">MeteOmo（iOSアプリ・共同開発）</a>
-        <a class="ext" href="https://gilvane6174.github.io/Tomoshibi-atlas/" target="_blank" rel="noopener noreferrer">Tomoshibi Atlas（健康とITセキュリティの公的情報を地球儀で見る非営利リンク集・運用）</a>
+        <a class="ext" href="https://github.com/gilvane6174/MeteOmo" target="_blank" rel="noopener noreferrer">MeteOmo（iOSアプリ・個人開発中）</a>
+        <a class="ext" href="https://gilvane6174.github.io/Tomoshibi-atlas/" target="_blank" rel="noopener noreferrer">Tomoshibi Atlas（健康・防災・防犯・ITセキュリティの公的情報を地球儀で見る非営利サイト・運用）</a>
         <a class="ext" href="https://gilvane6174.github.io/komorebi-desk/" target="_blank" rel="noopener noreferrer">こもれびデスク（仕事・お店・くらし向けの無料記録ツール・企画/設計/開発）</a>
         <a href="novel.html">作品一覧</a>
       </div>
@@ -180,8 +185,8 @@
     <section class="w-sec" id="contact" aria-labelledby="h-contact">
       <h2 id="h-contact"><small>CONTACT</small>お問い合わせ</h2>
       <p>まずはお気軽にご相談ください。ご依頼内容、ご希望の納期、おおよそのご予算をお知らせいただけると、スムーズにご提案できます。内容を拝見のうえ、お引き受けできるものにご返信いたします。内容によってはご返信できない場合があります。</p>
-      <p><a class="w-cta ext" href="https://forms.gle/ZL7x1uqHUPTAfdy67" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a></p>
-      <p class="note-small">お問い合わせにはGoogleフォームを使用します。入力内容は運営者が受け取り、お問い合わせへの対応にのみ利用します。収集項目と個人情報の取り扱いはフォーム内の説明をご確認ください。パスワードなどの認証情報や機密情報は入力しないでください。当サイト自体はCookieやアクセス解析を使用していません。</p>
+      <p><a class="w-cta ext" href="https://docs.google.com/forms/d/e/1FAIpQLSeaBNKQCavRffRIuYMr4G78d8dWgp1r07ret-Ar78SI8E76ow/viewform" target="_blank" rel="noopener noreferrer">お問い合わせフォームを開く</a></p>
+      <p class="note-small">お問い合わせにはGoogleフォームを使用します。入力内容（メールアドレス・お名前またはニックネーム・お問い合わせ内容など）は運営者が受け取り、お問い合わせへの対応にのみ利用します。内容によっては、担当する共同運営者・共同開発者と共有する場合があります。パスワードなどの認証情報や機密情報は入力しないでください。当サイト自体はCookieやアクセス解析を使用していません。</p>
     </section>
 
   </div>
