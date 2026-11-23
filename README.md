@@ -18,6 +18,29 @@
 | `css/` `js/` `favicon.svg` | 見た目と演出 |
 | `ogp.png` | SNSで共有したときに表示される画像 |
 | `.nojekyll` | GitHub Pages の Jekyll 処理を止める |
+| `robots.txt` | クロール制限なし＋sitemap.xmlの場所を案内。Tomoshibi-atlas/ など同じドメインの全ページにも効く |
+| `sitemap.xml` | 検索エンジン向けのページ一覧。ページを増やしたら1行足す |
+
+## 変更するときに直す場所
+
+| 変えたいもの | 直すファイル |
+|---|---|
+| 更新履歴 | `data/news.js` だけ |
+| ABOUTのリンク集 | `data/links.js` だけ |
+| お問い合わせフォームのURL・注意書き | `index.html`・`about.html`・`work.html`（2か所）・`maintenance.html` の計5か所（`forms.gle` の短縮URLではなく、`docs.google.com/forms/…/viewform` の正式URLを使う） |
+| メニュー（HOME/ABOUT等） | `index.html`・`about.html`・`novel.html`・`work.html`（`work.html` は上部の別メニュー） |
+| フッターの著作権表記 | `index.html`・`about.html`・`novel.html`・`work.html`・`maintenance.html` |
+| ページを増やす・消す | 該当HTML＋`sitemap.xml`＋必要ならメニュー |
+| Tomoshibi Atlas・こもれびデスクの紹介 | `index.html`・`about.html`・`work.html`（リンク集に載せるなら `data/links.js` も） |
+
+URLを一括で探すときは、エディタの「フォルダ内を検索」で古いURLを検索すると漏れを防げます。
+
+## アップロード前の確認
+
+1. 手元でページを開き、HOMEの「更新履歴」とABOUTの「リンク集」が表示されることを確認する（空欄や「表示できませんでした」なら `data/` の書き間違い。カンマと `"` を確認）
+2. 4ページ（HOME・ABOUT・NOVEL・ご依頼）のメニューとリンクを一通りクリックする
+3. 差分に、パスワード・メールアドレス・住所・端末のフォルダ名などが入っていないか確認する
+4. 画像を足した場合は、位置情報などのメタデータを消してから入れる
 
 ## 安全設計
 
@@ -29,6 +52,7 @@
 - エラー画面（404/403）は JavaScript を一切使わない。URL や入力値を画面に表示しない
 - `data/` のファイルの内容は文字としてだけ表示し、`https://` 以外のURLは表示しない
 - ブラウザの localStorage に「この端末での訪問回数」の数字だけを保存（カウンター演出用。外部送信なし）
+- ご依頼ページの波紋（`js/ripple.js`）は端末内の canvas に描くだけで外部通信なし。タブが裏にある間は停止し、「視差効果を減らす」設定では静止画のみ表示
 
 アクセスカウンター・管理人ステータス・更新表示は演出で、実際の数値や状況ではありません。
 

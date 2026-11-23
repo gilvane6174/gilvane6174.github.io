@@ -138,6 +138,13 @@ body.retro {
 .works .links a { margin-right: 12px; font-size: 13px; }
 .note-small { font-size: 12px; color: var(--dim); }
 
+/* 短編集の収録作品（折りたたみ） */
+.anthology { margin-top: 10px; border: 1px dashed var(--line); padding: 6px 10px; }
+.anthology summary { cursor: pointer; color: var(--accent); font-size: 14px; }
+.anthology__list { list-style: none; margin: 8px 0 0; padding: 0; }
+.anthology__list > li { padding: 8px 0; border-top: 1px dotted var(--line); }
+.anthology__list h4 { margin: 0 0 4px; font-size: 15px; color: #fff; }
+
 /* ---- リンク集 ---- */
 .linklist { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 12px; }
 .linklist li::before { content: "→ "; color: var(--accent); }
